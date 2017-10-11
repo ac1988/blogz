@@ -3,7 +3,9 @@
 {% block content %}
 {% for blog in blogs %}
     {% if id == blog.id %}
-        <h1><center> {{ blog.title }}</center></h1>
+        <header>
+            <h1><center> {{ blog.title }}</center></h1>
+        </header>
         {{ blog.body }}
     {% endif %}
 {% endfor %}
