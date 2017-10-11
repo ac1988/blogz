@@ -6,7 +6,9 @@
         <header>
             <h1><center> {{ blog.title }}</center></h1>
         </header>
-        {{ blog.body }}
+        <main>
+            {{ blog.body }}
+        </main>
     {% endif %}
 {% endfor %}
 {% endblock %}
