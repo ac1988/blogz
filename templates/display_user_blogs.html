@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header>
+    <h1><center>Blog Posts!</center></h1>
+</header>
+
+{% for blog in blogs %}
+    {% if user == blog.owner_id %}
+        <h2> {{ blog.title }} </h2>
+        {{ blog.body }}
+        <br/>
+        <br/>
+        <br/>
+        <hr class="style" />
+    {% endif %}
+{% endfor %}
+{% endblock %}

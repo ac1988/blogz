@@ -2,7 +2,7 @@
 
 {% block content %}
 <header>
-    <h1><center>Build a Blog</center></h1>
+    <h1><center>Welcome to Blogz!</center></h1>
 </header>
 
 {% if blogs|length == 0 %}
@@ -11,7 +11,11 @@
     {% for blog in blogs %}
         <a href="/blog?id={{ blog.id }}"><h2>{{ blog.title }}</h2></a>
         {{ blog.body }}
-        <br/>
+        {% for user in users %}
+            {% if blog.owner_id == user.id %}
+                <p><i>written by <a href="/blog?user={{ user.id }}"> {{ user.username }}</a></i></p>
+            {% endif %}
+        {% endfor %}
         <br/>
         <br/>
         <hr class="style" />

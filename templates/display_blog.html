@@ -8,6 +8,11 @@
         </header>
         <main>
             {{ blog.body }}
+            {% for user in users %}
+                {% if blog.owner_id == user.id %}
+                    <p><i>written by <a href="/blog?user={{ user.id }}"> {{ user.username }}</a></i></p>
+                {% endif %}
+            {% endfor %}
         </main>
     {% endif %}
 {% endfor %}

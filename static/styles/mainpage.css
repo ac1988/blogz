@@ -43,3 +43,7 @@ hr.style:after {
     font-size: 1.5em; 
     padding: 0 0.25em; 
 }
+
+.center {
+    margin: auto;
+}
